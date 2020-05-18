@@ -1,0 +1,150 @@
+x<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Tudo sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css"/>
+    <link rel="stylesheet" href="_css/form.css"/>
+  </head>
+  <script src="_javascript/funcoes.js"></script>
+
+  <body>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<div id="interface">
+    <header id="cabecalho">
+
+    <hgroup>
+      <h1>Google Glass</h1>
+      <h2>A revolução do Google está chegando</h2>
+    </hgroup>
+
+    <img id="icone" src="_imagens\glass-oculos-preto-peq.png">
+
+<nav  id="menu" onmouseout="mudaFoto('_imagens/contato.png')">
+  <h1>Menu Principal</h1>
+  <ul>
+    <li onmousemove="mudaFoto('_imagens/home.png')"><a href="index.html" target="_self">Home</a></li>
+    <li onmousemove="mudaFoto('_imagens/especificacoes.png')"><a href="specs.html" target="_self">Especificações</a></li>
+    <li onmousemove="mudaFoto('_imagens/fotos.png')"><a href="fotos.html" target="_self">Fotos</a></li>
+    <li onmousemove="mudaFoto('_imagens/multimidia.png')"><a href="multimidia.html" target="_self">Multimídia</a></li>
+    <li onmousemove="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html" target="_self">Fale conosco</a></li>
+  </ul>
+</nav>
+
+    </header>
+
+    <section id="corpo-noticia">
+      <article id="noticia-principal">
+      <header id="cabecalho-artigo">
+      <hgroup>
+        <h3>Fale Conosco > Contato</h3>
+        <h1>Formulário de Contato</h1>
+        <h2>por Gustavo Guanabara</h2>
+        <h3 class="direita">Atualizado em 01/Maio/2013</h3>
+      </hgroup>
+      </header>
+      </article>
+    </section>
+<form action="index.html" method="post" oninput="precoC()">
+  <fieldset id="usuario">
+    <legend>Identificação do Usuário</legend>
+    <p><label for="cName">Nome: <input type="text" name="tName" id="cName" maxlength="40" placeholder="Nome Completo"></label> </p>
+    <p><label for="cPassword">Senha: <input type="password" name="tPassword" id="cPassword" size="8" maxlength="16"></label> </p>
+    <p><label for="cMail">E-mail: <input type="email" name="tMail" id="cMail" size="21" maxlength="50" placeholder="joaodasilva2000@gmail.com"></label> </p>
+    <fieldset id="sexo">
+      <legend>Sexo</legend>
+           <input type="radio" name="tSex" id="cMasc"><label for="cMasc">Masculino</label><br>
+           <input type="radio" name="tSex" id="cFem"><label for="cFem">Feminino</label><br>
+           <input type="radio" name="tSex" id="cOutro"><label for="cOutro">Outro</label>
+    </fieldset>
+    <p><label for="cDate">Data de Nascimento:</label> <input type="date" name="tDate" id="cDate"></p>
+  </fieldset>
+  <fieldset id="endereco">
+
+    <legend>Endereço do Usuário</legend>
+    <p><label for="cCep">CEP:</label> <input type="text" name="tCep" id="cCep"> </p>
+    <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" placeholder="Rua, Avenida"></p>
+    <p><label for="cNumber">Número:</label> <input type="number" name="tNumber" id="cNumber" min="0" max="99999"> <label for="cBar">Bairro:</label> <input type="text" name="tBar" id="cBar" size="12">  </p>
+    <p><label for="cComp">Complemento: </label> <input type="text" name="tComp" id="cComp" value=""> </p>
+    <p><label for="cEst">Estado: <select name="tEst" id="cEst">
+        <optgroup label="Região Sudeste">
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="SP">São Paulo</option>
+          <option value="MG">Minas Gerais</option>
+        </optgroup>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="BA">Bahia</option>
+        <option value="SC">Santa Catarina</option>
+    </select> </label></p>
+    <p><label for="cCit">Cidade:</label> <input type="text" name="tCit" id="cCit" maxlength="50" placeholder="Sua Cidade" list="cidades"></p>
+    <datalist id="cidades">
+      <option value="Rio de Janeiro"></option>
+      <option value="Nova Iguaçu"></option>
+      <option value="Duque de Caxias"></option>
+      <option value="Belford Roxo"></option>
+      <option value="Niterói"></option>
+    </datalist>
+  </fieldset>
+  <fieldset id="mensagem">
+    <legend>Mensagem do Usuário</legend>
+    <p><label for="cUrg">Grau de Urgência: </label> Min<input type="range" name="tUrg" id="cUrg" min="0" max="10" step="5">Max </p>
+    <p><label for="cMsg">Mensagem: <textarea name="tMsg" id="cMsg" rows="5" cols="35"></textarea> </label></p>
+  </fieldset>
+  <fieldset id="pedido">
+    <legend>Quero um Google Glass</legend>
+    <p><label for="cPerg"> <input type="checkbox" name="tPerg" id="cPerg" checked>Gostaria de adquirir um Google Glass quando disponível</label></p>
+    <p><label for="cCor">Cor:<input type="color" name="tCor" id="cCor" value="#000FFF"> </label></p>
+    <p><label for="cQtd">Quantidade: <input type="number" name="tQtd" id="cQtd" min="1" max="100"> </label></p>
+    <p><label for="cTot">Preço Total: R$ <input type="text" name="tTot" id="cTot" size="3" readonly> </label></p>
+  </fieldset>
+
+  <input type="image" name="tBot" id="cBot" src="_imagens/botao-enviar.png">
+</form>
+
+<footer id="rodape">
+    <p>Copyright &copy; 2013 - by Gustavo Guanabara<br/>
+    <a href="https://www.facebook.com/CursosEmVideo/" target="_blank">Facebook</a> | <a href="https://twitter.com/cursosemvideo" target="_blank">Twitter</a></p>
+</footer>
+</div>
+<script type="text/javascript">
+$("#cCep").focusout(function(){
+  //Início do Comando AJAX
+  $.ajax({
+    //O campo URL diz o caminho de onde virá os dados
+    //É importante concatenar o valor digitado no CEP
+    url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+    //Aqui você deve preencher o tipo de dados que será lido,
+    //no caso, estamos lendo JSON.
+    dataType: 'json',
+    //SUCESS é referente a função que será executada caso
+    //ele consiga ler a fonte de dados com sucesso.
+    //O parâmetro dentro da função se refere ao nome da variável
+    //que você vai dar para ler esse objeto.
+    success: function(resposta){
+      //Agora basta definir os valores que você deseja preencher
+      //automaticamente nos campos acima.
+      $("#cRua").val(resposta.logradouro);
+      $("#cComp").val(resposta.complemento);
+      $("#cBar").val(resposta.bairro);
+      $("#cCit").val(resposta.localidade);
+      $("#cEst").val(resposta.uf);
+
+      //Vamos incluir para que o Número seja focado automaticamente
+      //melhorando a experiência do usuário
+      $("#cNumber").focus();
+    }
+  });
+});
+
+function precoC() {
+    qtd = parseInt(document.getElementById('cQtd').value);
+    tot = qtd * 1500;
+    if ((Number.isNaN(tot)) == true) {
+      document.getElementById('cTot').value = "";
+    } else {
+      document.getElementById('cTot').value = tot;
+    }
+}
+</script>
+  </body>
+</html>
